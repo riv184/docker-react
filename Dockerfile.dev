@@ -1,0 +1,15 @@
+FROM node:16-alpine
+
+USER node
+
+#make dir as user node prior to workdir making dir with default root
+
+RUN mkdir -p /home/node/app 
+WORKDIR '/home/node/app'
+
+COPY --chown=node:node ./package.json ./
+RUN npm install
+
+COPY --chown=node:node ./ ./
+
+CMD ["npm", "run", "start"]
