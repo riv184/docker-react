@@ -14,9 +14,9 @@ jobs:
       - run: docker run -e CI=true cygnetops/react-test npm test
  
       - run: docker build -t cygnetops/multi-client-10-14 .
-      - run: docker build -t cygnetops/multi-nginx-10-14 ./nginx
-      - run: docker build -t cygnetops/multi-server-10-14 ./server
-      - run: docker build -t cygnetops/multi-worker-10-14 ./worker
+      - run: docker build -t cygnetops/multi-nginx-10-14 .
+      - run: docker build -t cygnetops/multi-server-10-14 .
+      - run: docker build -t cygnetops/multi-worker-10-14 .
  
       - run: docker push cygnetops/multi-client-10-14
       - run: docker push cygnetops/multi-nginx-10-14
