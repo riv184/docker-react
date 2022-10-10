@@ -18,11 +18,6 @@ jobs:
       - run: docker build -t cygnetops/multi-server-10-14 .
       - run: docker build -t cygnetops/multi-worker-10-14 .
  
-      - run: docker push cygnetops/multi-client-10-14
-      - run: docker push cygnetops/multi-nginx-10-14
-      - run: docker push cygnetops/multi-server-10-14
-      - run: docker push cygnetops/multi-worker-10-14
- 
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
  
